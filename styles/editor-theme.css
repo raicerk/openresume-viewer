@@ -1,0 +1,55 @@
+/* Estilos personalizados para el editor */
+.editor-dark {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.editor-dark ::selection {
+  background-color: #264f78;
+}
+
+.editor-dark .token.comment {
+  color: #6a9955;
+}
+
+.editor-dark .token.property,
+.editor-dark .token.tag,
+.editor-dark .token.boolean,
+.editor-dark .token.number,
+.editor-dark .token.constant,
+.editor-dark .token.symbol {
+  color: #b5cea8;
+}
+
+.editor-dark .token.selector,
+.editor-dark .token.attr-name,
+.editor-dark .token.string,
+.editor-dark .token.char,
+.editor-dark .token.builtin {
+  color: #ce9178;
+}
+
+.editor-dark .token.operator,
+.editor-dark .token.entity,
+.editor-dark .token.url,
+.editor-dark .language-css .token.string,
+.editor-dark .style .token.string {
+  color: #d4d4d4;
+}
+
+.editor-dark .token.atrule,
+.editor-dark .token.attr-value,
+.editor-dark .token.keyword {
+  color: #569cd6;
+}
+
+.editor-dark .token.function {
+  color: #dcdcaa;
+}
+
+.editor-dark .token.regex,
+.editor-dark .token.important,
+.editor-dark .token.variable {
+  color: #9cdcfe;
+}
+
