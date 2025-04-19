@@ -17,6 +17,10 @@ export const translations = {
     emptyPreview: "El texto ingresado aparecerá aquí...",
     editorPlaceholder: "Pega tu texto aquí... Se detectará automáticamente si es OpenC, JSON o YAML",
     formatError: "Error al formatear el código",
+    libraryForDevelopers: "Libreria para desarrolladores",
+    apiDocumentation: "Documentación de la API",
+    openResumeIntegration: "Integra Open Curriculum",
+    clientForJavascript: "Cliente para Javascript",
     footer: {
       copyright: "© 2024 Open Curriculum. Todos los derechos reservados.",
       help: "Ayuda",
@@ -24,22 +28,14 @@ export const translations = {
       terms: "Términos",
     },
     templates: {
-      linkedin: `[Tu Nombre]
-[Título Profesional]
-
-PERFIL PROFESIONAL
-Profesional con [X] años de experiencia en [industria/campo]...`,
-      harvard: `[Nombre Completo]
-[Dirección]
-[Teléfono] | [Email]
-
-EDUCACIÓN...`,
+      linkedin: ``,
+      harvard: ``,
     },
   },
   en: {
-    appName: "Open Curriculum",
+    appName: "Open Resume",
     learnToDesign: "Learn to design your own template",
-    cvType: "CV Type",
+    cvType: "Resume Type",
     linkedinStyle: "LinkedIn Style",
     linkedinDesc: "Professional and concise",
     harvardStyle: "Harvard Style",
@@ -54,23 +50,19 @@ EDUCACIÓN...`,
     emptyPreview: "The entered text will appear here...",
     editorPlaceholder: "Paste your text here... It will automatically detect if it's OpenC, JSON or YAML",
     formatError: "Error formatting code",
+    libraryForDevelopers: "Library for developers",
+    apiDocumentation: "API Documentation",
+    openResumeIntegration: "Integrate Open Resume",
+    clientForJavascript: "Client for Javascript",
     footer: {
-      copyright: "© 2024 Open Curriculum. All rights reserved.",
+      copyright: "© 2024 Open Resume. All rights reserved.",
       help: "Help",
       privacy: "Privacy",
       terms: "Terms",
     },
     templates: {
-      linkedin: `[Your Name]
-[Professional Title]
-
-PROFESSIONAL PROFILE
-Professional with [X] years of experience in [industry/field]...`,
-      harvard: `[Full Name]
-[Address]
-[Phone] | [Email]
-
-EDUCATION...`,
+      linkedin: ``,
+      harvard: ``,
     },
   },
 }
