@@ -1,20 +1,26 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
+import { LanguageProvider } from "@/providers/language-provider";
+import { DefaultLayout } from "@/layouts/default";
 
 export const metadata: Metadata = {
-  title: 'Open Resume preview',
-  description: 'Created by Juan Mora',
-  generator: '',
-}
+  title: "Open Resume preview",
+  description: "Created by Juan Mora",
+  generator: "",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>
+          <DefaultLayout>{children}</DefaultLayout>
+        </LanguageProvider>
+      </body>
     </html>
-  )
+  );
 }
