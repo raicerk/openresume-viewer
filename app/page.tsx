@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import DocumentViewer from "../document-viewer"
+import { DocumentViewer } from "../components/organisms/document-viewver";
 
 export default function SyntheticV0PageForDeployment() {
-  return <DocumentViewer />
+  return <DocumentViewer />;
 }
