@@ -14,7 +14,6 @@ import {
   FileText,
   Download,
   Upload,
-  FileIcon as FilePdf,
   FileIcon,
   FileCode,
   FileType,
@@ -25,12 +24,29 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/language-context";
+import React from "react";
+import { Language } from "@/lib/translations";
 
-export function HorizontalMenu() {
-  const { t, language } = useLanguage();
-  const handleDownload = (...any: any[]) => {};
-  const handleLanguageChange = (...any: any[]) => {};
-  const handleTemplateSelect = (...any: any[]) => {};
+export function DesktopMenu() {
+  const { t, language, setLanguage } = useLanguage()
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [text, setText] = React.useState("")
+  const [template, setTemplate] = React.useState<"linkedin" | "harvard" | null>(null)
+  
+  const handleDownload = (format: string) => {
+    console.log(`Descargando en formato ${format}`)
+    setIsMenuOpen(false)
+  }
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang)
+    setIsMenuOpen(false)
+    
+  }
+  const handleTemplateSelect = (templateType: "linkedin" | "harvard") => {
+    setTemplate(templateType)
+    setText(t(`templates.${templateType}`))
+    setIsMenuOpen(false)
+  }
 
   return (
     <div className="flex items-center gap-2">
