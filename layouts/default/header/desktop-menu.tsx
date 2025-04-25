@@ -12,11 +12,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
   FileText,
-  Download,
   Upload,
-  FileIcon,
   FileCode,
-  FileType,
   Linkedin,
   GraduationCap,
   Languages,
@@ -29,14 +26,10 @@ import { Language } from "@/lib/translations";
 
 export function DesktopMenu() {
   const { t, language, setLanguage } = useLanguage()
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
-  const [text, setText] = React.useState("")
-  const [template, setTemplate] = React.useState<"linkedin" | "harvard" | null>(null)
+  const [, setIsMenuOpen] = React.useState(false)
+  const [, setText] = React.useState("")
+  const [, setTemplate] = React.useState<"linkedin" | "harvard" | null>(null)
   
-  const handleDownload = (format: string) => {
-    console.log(`Descargando en formato ${format}`)
-    setIsMenuOpen(false)
-  }
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang)
     setIsMenuOpen(false)
@@ -159,10 +152,10 @@ export function DesktopMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem onClick={() => handleLanguageChange("es")}>
-            Español
+            {t("languageSpanish")}
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => handleLanguageChange("en")}>
-            English
+            {t("languageEnglish")}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
