@@ -21,6 +21,9 @@ export const translations = {
     apiDocumentation: "Documentación de la API",
     openResumeIntegration: "Integra Open Curriculum",
     clientForJavascript: "Cliente para Javascript",
+    language: "Idioma",
+    languageSpanish: "Español",
+    languageEnglish: "Inglés",
     footer: {
       copyright: "© 2024 Open Curriculum. Todos los derechos reservados.",
       help: "Ayuda",
@@ -54,6 +57,9 @@ export const translations = {
     apiDocumentation: "API Documentation",
     openResumeIntegration: "Integrate Open Resume",
     clientForJavascript: "Client for Javascript",
+    language: "Language",
+    languageSpanish: "Spanish",
+    languageEnglish: "English",
     footer: {
       copyright: "© 2024 Open Resume. All rights reserved.",
       help: "Help",

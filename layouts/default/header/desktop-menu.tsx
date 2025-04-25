@@ -149,34 +149,6 @@ export function DesktopMenu() {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {/* Menú de Exportar */}
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="sm" className="h-8">
-            <Download className="mr-2 h-4 w-4" />
-            {t("exportAs")}
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-56">
-          <DropdownMenuItem onClick={() => handleDownload("pdf")}>
-            <FileIcon className="mr-2 h-4 w-4" />
-            PDF
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleDownload("docx")}>
-            <FileIcon className="mr-2 h-4 w-4" />
-            Word
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleDownload("html")}>
-            <FileCode className="mr-2 h-4 w-4" />
-            HTML
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleDownload("txt")}>
-            <FileType className="mr-2 h-4 w-4" />
-            {t("plainText")}
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-
       {/* Language Selector */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
