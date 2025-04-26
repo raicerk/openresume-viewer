@@ -1,6 +1,8 @@
+"use client";
+
+import Prism from "prismjs";
 import { DocumentContextType } from "./context/context";
 import yaml from "js-yaml";
-import Prism from "prismjs";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-yaml";
 import "prismjs/themes/prism-dark.css";

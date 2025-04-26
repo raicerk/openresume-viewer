@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/contexts/language-context";
+import { useLanguage } from "@/hooks/use-language";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { useDocumentViewerContext } from "./hooks/useDocumentViewerContext";
 import yaml from "js-yaml";

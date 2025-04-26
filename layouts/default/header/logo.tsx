@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/contexts/language-context";
+import { useLanguage } from "@/hooks/use-language";
 import { FileEdit } from "lucide-react";
 
 export function Logo() {

@@ -2,7 +2,7 @@
 
 import { type Language, translations } from "@/lib/translations";
 import * as React from "react";
-import { LanguageContext } from "../contexts/language-context";
+import { LanguageContext } from "../contexts/language";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = React.useState<Language>("es");
