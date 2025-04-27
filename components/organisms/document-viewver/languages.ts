@@ -1,6 +1,6 @@
 "use client";
 
-import Prism from "prismjs";
+import Prism, { highlight } from "prismjs";
 import { DocumentContextType } from "./context/context";
 import yaml from "js-yaml";
 import "prismjs/components/prism-json";
@@ -13,10 +13,9 @@ type LanguageActions = {
   highlight: (text: string) => string;
 };
 
-export const SupportedLanguages: Record<
-  DocumentContextType["source"]["language"],
-  LanguageActions
-> = {
+export type KnownLanguages = "json" | "yaml" | "text";
+
+export const SupportedLanguages: Record<KnownLanguages, LanguageActions> = {
   json: {
     test(code) {
       try {
@@ -38,7 +37,6 @@ export const SupportedLanguages: Record<
         yaml.load(code);
         return true;
       } catch (error) {
-        console.debug(error);
         return false;
       }
     },
@@ -62,7 +60,7 @@ export const SupportedLanguages: Record<
   },
 };
 
-export function parse(input: string) {
+export function parseSource(input: string) {
   let language = "text";
   let actions = SupportedLanguages.text;
 
@@ -75,5 +73,13 @@ export function parse(input: string) {
     }
   }
 
-  return { language, actions };
+  return {
+    language: language as KnownLanguages,
+    format(code = input) {
+      return actions.formatter(code);
+    },
+    highlight(code = input) {
+      return actions.highlight(code);
+    },
+  };
 }

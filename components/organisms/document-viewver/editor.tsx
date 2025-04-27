@@ -4,33 +4,18 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/use-language";
 import { FileCode } from "lucide-react";
-import { useMemo } from "react";
 import CodeEditor from "react-simple-code-editor";
 import { useDocumentViewerContext } from "./hooks/useDocumentViewerContext";
-import { parse } from "./languages";
-import React from "react";
+import { useParser } from "./hooks/useParser";
 
 type EditorProps = {
-  onSourceChange(text: string, language?: string): void;
-  onError(message: string): void;
+  onSourceChange(text: string): void;
 };
 
-export function Editor({ onError, onSourceChange }: EditorProps) {
+export function Editor({ onSourceChange }: EditorProps) {
   const { t } = useLanguage();
   const { source, error } = useDocumentViewerContext();
-  const parser = useMemo(() => parse(source.text), [source]);
-
-  const handleSourceChange = (text: string) => {
-    onSourceChange(text, parse(text).language);
-  };
-
-  const formatCode = () => {
-    onSourceChange(parser.actions.formatter(source.text));
-  };
-
-  const highlightCode = (code: string) => {
-    return parser.actions.highlight(code);
-  };
+  const { format, highlight } = useParser();
 
   return (
     <div className="relative flex flex-col rounded-lg border bg-card">
@@ -50,7 +35,7 @@ export function Editor({ onError, onSourceChange }: EditorProps) {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => formatCode()}
+              onClick={() => format()}
               className="absolute right-2 top-2 z-10"
             >
               <FileCode className="mr-2 h-4 w-4" />
@@ -59,8 +44,8 @@ export function Editor({ onError, onSourceChange }: EditorProps) {
           )}
         <CodeEditor
           value={source.text}
-          onValueChange={(value) => handleSourceChange(value)}
-          highlight={(code) => highlightCode(code)}
+          onValueChange={onSourceChange}
+          highlight={highlight}
           padding={16}
           style={{
             boxSizing: "border-box",
