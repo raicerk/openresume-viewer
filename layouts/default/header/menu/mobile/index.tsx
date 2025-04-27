@@ -25,6 +25,7 @@ import { AvailableLanguages } from "@/constants/available-languages";
 import { AvailableTemplates } from "@/constants/available-templates";
 import { AvailableResources } from "@/constants/available-resources";
 import classNames from "classnames";
+import Link from "next/link";
 
 // Componente de menú para móvil
 export function MobileMenu({ className }: { className?: string }) {
@@ -60,6 +61,17 @@ export function MobileMenu({ className }: { className?: string }) {
           <div className="flex flex-col gap-2">
             <h3 className="text-sm font-medium">{t("libraryForDevelopers")}</h3>
             <ul>
+              <li>
+                <Button variant="ghost" size="sm" className="justify-start">
+                  <GraduationCap className="mr-2 h-4 w-4" />
+                  <Link
+                    href="https://theopenresumeproject.github.io/OpenResume"
+                    className="text-sm"
+                  >
+                    {t("learnToOpenResumeFormat")}
+                  </Link>
+                </Button>
+              </li>
               {AvailableResources.map(({ id, icon, link, translations }) => (
                 <li key={id}>
                   <Button variant="ghost" size="sm" className="justify-start">

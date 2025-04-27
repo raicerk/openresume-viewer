@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -37,7 +38,7 @@ export function Editor({ onError, onSourceChange }: EditorProps) {
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium">{t("detectedFormat")}</span>
           <span className="rounded-md bg-muted px-2 py-1 text-xs font-medium">
-            {source.language === "text" && "OpenC"}
+            {source.language === "text" && "ORF"}
             {source.language === "json" && "JSON"}
             {source.language === "yaml" && "YAML"}
           </span>
@@ -62,20 +63,13 @@ export function Editor({ onError, onSourceChange }: EditorProps) {
           highlight={(code) => highlightCode(code)}
           padding={16}
           style={{
-            // TODO: This throws error because of root rule
-            // @ts-expect-error
-            root: {
-              boxSizing: "border-box",
-              fontFamily: '"Fira code", "Fira Mono", monospace',
-              fontSize: 14,
-              height: "100%",
-              backgroundColor: "transparent",
-              color: "inherit",
-              borderRadius: "0",
-            },
-            textarea: {
-              outline: 0,
-            },
+            boxSizing: "border-box",
+            fontFamily: '"Fira code", "Fira Mono", monospace',
+            fontSize: 14,
+            height: "100%",
+            backgroundColor: "transparent",
+            color: "inherit",
+            borderRadius: "0",
           }}
           className="h-full min-h-full overflow-auto"
           placeholder={t("editorPlaceholder")}

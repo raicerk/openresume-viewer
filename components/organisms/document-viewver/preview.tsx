@@ -22,24 +22,19 @@ import {
 
 const generateHtmlPreview = (content: string, mode: string) => {
   try {
-    let data = content;
+    let data: string | unknown = content;
     switch (mode) {
       case "json":
         data = JSON.parse(content);
         break;
-      case "yaml": {
-        const parsedYaml = yaml.load(content);
-        if (typeof parsedYaml === "string") {
-          data = parsedYaml;
-        } else {
-          throw new Error("Parsed YAML is not a string");
-        }
+      case "yaml":
+        data = yaml.load(content);
         break;
-      }
       default:
         throw new Error("Unsupported mode");
     }
 
+    // TODO: Acá debe ir la lògica de renderizado de los diferentes tipos de datos
     if (typeof data === "object" && data !== null) {
       return (
         <div className="space-y-4">
@@ -60,6 +55,10 @@ const generateHtmlPreview = (content: string, mode: string) => {
             </div>
           ))}
         </div>
+      );
+    } else {
+      return (
+        <div className="rounded-lg border bg-card p-4">Invalid data format</div>
       );
     }
   } catch (e) {

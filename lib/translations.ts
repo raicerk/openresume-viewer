@@ -1,6 +1,7 @@
 export const translations = {
   es: {
     appName: "Open Curriculum",
+    learnToOpenResumeFormat: "Aprende más sobre el formato ORF",
     learnToDesign: "Aprende a diseñar tu propia plantilla",
     cvType: "Tipo de Curriculum Vitae",
     linkedinStyle: "Estilo LinkedIn",
@@ -15,7 +16,7 @@ export const translations = {
     format: "Formatear",
     preview: "Vista previa",
     emptyPreview: "El texto ingresado aparecerá aquí...",
-    editorPlaceholder: "Pega tu texto aquí... Se detectará automáticamente si es OpenC, JSON o YAML",
+    editorPlaceholder: "Pega tu texto aquí... Se detectará automáticamente si es ORF, JSON o YAML",
     formatError: "Error al formatear el código",
     libraryForDevelopers: "Libreria para desarrolladores",
     apiDocumentation: "Documentación de la API",
@@ -38,6 +39,7 @@ export const translations = {
   },
   en: {
     appName: "Open Resume",
+    learnToOpenResumeFormat: "Learn more about the ORF",
     learnToDesign: "Learn to design your own template",
     cvType: "Resume type",
     linkedinStyle: "LinkedIn Style",
@@ -52,7 +54,7 @@ export const translations = {
     format: "Format",
     preview: "Preview",
     emptyPreview: "The entered text will appear here...",
-    editorPlaceholder: "Paste your text here... It will automatically detect if it's OpenC, JSON or YAML",
+    editorPlaceholder: "Paste your text here... It will automatically detect if it's ORF, JSON or YAML",
     formatError: "Error formatting code",
     libraryForDevelopers: "Library for developers",
     apiDocumentation: "API Documentation",
