@@ -29,6 +29,7 @@ export const translations = {
       help: "Ayuda",
       privacy: "Privacidad",
       terms: "Términos",
+      coffe: "Apóyanos con un café.",
     },
     templates: {
       linkedin: ``,
@@ -38,7 +39,7 @@ export const translations = {
   en: {
     appName: "Open Resume",
     learnToDesign: "Learn to design your own template",
-    cvType: "Resume Type",
+    cvType: "Resume type",
     linkedinStyle: "LinkedIn Style",
     linkedinDesc: "Professional and concise",
     harvardStyle: "Harvard Style",
@@ -65,6 +66,7 @@ export const translations = {
       help: "Help",
       privacy: "Privacy",
       terms: "Terms",
+      coffe: "Support us with a coffee."
     },
     templates: {
       linkedin: ``,

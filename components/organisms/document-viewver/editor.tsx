@@ -7,6 +7,7 @@ import { useMemo } from "react";
 import CodeEditor from "react-simple-code-editor";
 import { useDocumentViewerContext } from "./hooks/useDocumentViewerContext";
 import { parse } from "./languages";
+import React from "react";
 
 type EditorProps = {
   onSourceChange(text: string, language?: string): void;

@@ -26,7 +26,7 @@ export const SupportedLanguages: Record<
       }
     },
     formatter(code) {
-      return JSON.stringify(code, null, 2);
+      return JSON.stringify(JSON.parse(code), null, 2);
     },
     highlight(code) {
       return Prism.highlight(code, Prism.languages.json, "json");
@@ -36,7 +36,6 @@ export const SupportedLanguages: Record<
     test(code) {
       try {
         yaml.load(code);
-
         return true;
       } catch (error) {
         console.debug(error);
@@ -69,8 +68,6 @@ export function parse(input: string) {
 
   for (const [_language, _actions] of Object.entries(SupportedLanguages)) {
     const success = _actions.test(input);
-    console.debug("testing against", _language, success);
-
     if (success) {
       language = _language;
       actions = _actions;
