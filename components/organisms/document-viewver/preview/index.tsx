@@ -6,8 +6,9 @@ import { useDocumentViewerContext } from "../hooks/useDocumentViewerContext";
 import { Export } from "./export";
 import { useMemo } from "react";
 import { ParsedDocument } from "../context/context";
+import React from "react";
 
-function isRecord(obj: any): obj is Record<string, unknown> {
+function isRecord(obj: unknown): obj is Record<string, unknown> {
   return typeof obj === "object" && obj !== null && !Array.isArray(obj);
 }
 
@@ -20,6 +21,7 @@ const HTMLPreview = ({ children }: { children?: ParsedDocument }) => {
 
   return (
     <div className="space-y-4">
+      {/* TODO: Acá debo agregar los templates para mapear los datos */}
       {Object.entries(children).map(([key, value]) => (
         <div key={key} className="rounded-lg border bg-card p-4">
           <h3 className="mb-2 font-medium text-primary">{key}</h3>
@@ -54,7 +56,7 @@ export function Preview() {
           </p>
         ));
       default:
-        return <HTMLPreview children={document} />;
+        return <HTMLPreview>{document}</HTMLPreview>;
     }
   }, [document, source]);
 

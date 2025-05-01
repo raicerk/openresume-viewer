@@ -5,7 +5,7 @@ import { DocumentContext } from "./context/context";
 import { reducer } from "./context/reducer";
 import { Editor } from "./editor";
 import { Preview } from "./preview";
-import { parseSource } from "./languages";
+import React from "react";
 
 export function DocumentViewer() {
   const [state, dispatch] = useReducer(reducer, {

@@ -1,7 +1,6 @@
 "use client";
 
-import Prism, { highlight } from "prismjs";
-import { DocumentContextType } from "./context/context";
+import Prism from "prismjs";
 import yaml from "js-yaml";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-yaml";
@@ -21,6 +20,7 @@ export const SupportedLanguages: Record<KnownLanguages, LanguageActions> = {
       try {
         return JSON.parse(code);
       } catch {
+        console.error("JSON parsing error");
         return false;
       }
     },
@@ -37,6 +37,7 @@ export const SupportedLanguages: Record<KnownLanguages, LanguageActions> = {
         yaml.load(code);
         return true;
       } catch (error) {
+        console.error("YAML parsing error:", error);
         return false;
       }
     },

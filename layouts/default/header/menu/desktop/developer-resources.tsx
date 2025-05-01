@@ -7,7 +7,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { AvailableResources } from "@/constants/available-resources";
 import { useLanguage } from "@/hooks/use-language";
-import { Code, FileCode } from "lucide-react";
+import { Code } from "lucide-react";
+import Link from "next/link";
+import React from "react";
 
 export function DeveloperResources() {
   const { t } = useLanguage();
@@ -25,10 +27,12 @@ export function DeveloperResources() {
           <DropdownMenuItem key={id}>
             <span className="mr-2 h-4 w-4">{icon}</span>
             <div className="flex flex-col">
-              <span>{t(translations.name)}</span>
-              <span className="text-xs text-muted-foreground">
-                {t(translations.kind)}
-              </span>
+              <Link href={link} target="_blank" className="flex flex-col">
+                <span>{t(translations.name)}</span>
+                <span className="text-xs text-muted-foreground">
+                  {t(translations.kind)}
+                </span>
+              </Link>
             </div>
           </DropdownMenuItem>
         ))}

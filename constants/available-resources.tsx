@@ -1,5 +1,6 @@
 import { TranslationKeys } from "@/lib/translations";
 import { Code, FileCode } from "lucide-react";
+import React from "react";
 
 export const AvailableResources: Array<{
   id: string;

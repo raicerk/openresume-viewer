@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -7,6 +6,7 @@ import { FileCode } from "lucide-react";
 import CodeEditor from "react-simple-code-editor";
 import { useDocumentViewerContext } from "./hooks/useDocumentViewerContext";
 import { useParser } from "./hooks/useParser";
+import React from "react";
 
 type EditorProps = {
   onSourceChange(text: string): void;
