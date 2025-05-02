@@ -19,8 +19,8 @@ export const SupportedLanguages: Record<KnownLanguages, LanguageActions> = {
     test(code) {
       try {
         return JSON.parse(code);
-      } catch {
-        console.error("JSON parsing error");
+      } catch (error) {
+        console.debug("Attempted to parse JSON", error);
         return false;
       }
     },
@@ -37,7 +37,7 @@ export const SupportedLanguages: Record<KnownLanguages, LanguageActions> = {
         yaml.load(code);
         return true;
       } catch (error) {
-        console.error("YAML parsing error:", error);
+        console.debug("YAML parsing error", error);
         return false;
       }
     },
@@ -76,10 +76,10 @@ export function parseSource(input: string) {
 
   return {
     language: language as KnownLanguages,
-    format(code = input) {
+    format(code: string) {
       return actions.formatter(code);
     },
-    highlight(code = input) {
+    highlight(code: string) {
       return actions.highlight(code);
     },
   };
