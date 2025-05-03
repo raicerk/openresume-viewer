@@ -52,6 +52,11 @@ export type ResumeSchema = {
             employer_country?: string | null;
             description?: string[];
         }[];
+        skill?: {
+            name: string;
+            proficiency_level?: string;
+            catogory?: string;
+        }[];
         summary?: string;
         projects?: {
             title: string;

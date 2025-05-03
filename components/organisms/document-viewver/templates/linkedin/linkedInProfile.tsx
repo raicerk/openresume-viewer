@@ -1,43 +1,47 @@
 import React from "react";
 import styles from "./linkedInProfile.module.css";
 import { ResumeSchema } from "../../types/resume";
+import { useLanguage } from "@/hooks/use-language";
 
 type LinkedinProps = {
   resume: ResumeSchema;
 };
 
-
-const LinkedInProfile = ({resume}: LinkedinProps) => {
+const LinkedInProfile = ({ resume }: LinkedinProps) => {
+  const { t } = useLanguage();
   return (
     <div className={styles.container}>
       <aside className={styles.aside}>
         <div className={styles.sidebarSection}>
-          <h3>Contacto</h3>
+          <h3>{t("templates.linkedin.contact")}</h3>
           <ul className={styles.skillsList}>
-            <li>64890833</li>
-            <li>raicerk@outlook.com</li>
-            <li>linkedin.com/in/juanvalentinmoraruiz</li>
+            <li>
+              {resume?.data?.personal?.country_code}
+              {resume?.data?.personal?.phone_number}
+            </li>
+            <li>{resume?.data?.personal?.email}</li>
+            <li>{resume?.data?.personal?.url_linkedin}</li>
           </ul>
         </div>
 
         <div className={styles.sidebarSection}>
-          <h3>Aptitudes principales</h3>
+          <h3>{t("templates.linkedin.mainSkills")}</h3>
           <ul className={styles.skillsList}>
-            <li>Open API</li>
-            <li>Agilidad</li>
-            <li>Liderazgo de equipos multidisciplinarios</li>
+            {resume?.data?.skill?.map((skill, index) => (
+              <li key={index}>{skill.name}</li>
+            ))}
           </ul>
         </div>
 
         <div className={styles.sidebarSection}>
-          <h3>Idiomas</h3>
+          <h3>{t("templates.linkedin.languages")}</h3>
           <ul className={styles.skillsList}>
             <li>Español (Native or Bilingual)</li>
           </ul>
         </div>
 
         <div className={styles.sidebarSection}>
-          <h3>Certificaciones</h3>
+          <h3>{t("templates.linkedin.certifications")}</h3>
           <ul className={styles.certificationsList}>
             <li>MTA: Database Fundamentals</li>
             <li>
@@ -51,7 +55,7 @@ const LinkedInProfile = ({resume}: LinkedinProps) => {
         </div>
 
         <div className={styles.sidebarSection}>
-          <h3>Reconocimientos</h3>
+          <h3>{t("templates.linkedin.awards")}</h3>
           <ul className={styles.awardsList}>
             <li>Trabajador revelación 2016</li>
           </ul>
@@ -66,7 +70,7 @@ const LinkedInProfile = ({resume}: LinkedinProps) => {
         </header>
 
         <section className={styles.section} id="experience">
-          <h2>Experiencia</h2>
+          <h2>{t("templates.linkedin.experience")}</h2>
           <div className={styles.experienceItem}>
             <h3>Technical Lead</h3>
             <div className={styles.experienceMeta}>
@@ -92,7 +96,7 @@ const LinkedInProfile = ({resume}: LinkedinProps) => {
         </section>
 
         <section className={styles.section} id="education">
-          <h2>Educación</h2>
+          <h2>{t("templates.linkedin.education")}</h2>
           <div className={styles.educationItem}>
             <h3>Instituto Profesional AIEP</h3>
             <div className={styles.educationMeta}>

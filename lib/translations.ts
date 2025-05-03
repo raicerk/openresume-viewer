@@ -33,7 +33,15 @@ export const translations = {
       coffe: "Apóyanos con un café.",
     },
     templates: {
-      linkedin: ``,
+      linkedin: {
+        contact: "Contacto",
+        mainSkills: "Aptitudes principales",
+        languages: "Idiomas",
+        certifications: "Certificaciones",
+        awards: "Reconocimientos",
+        experience: "Experiencia",
+        education: "Educación",
+      },
       harvard: ``,
     },
   },
@@ -71,7 +79,15 @@ export const translations = {
       coffe: "Support us with a coffee."
     },
     templates: {
-      linkedin: ``,
+        linkedin: {
+          contact: "Contact",
+          mainSkills: "Main skills",
+          languages: "Languages",
+          certifications: "Certifications",
+          awards: "Awards",
+          experience: "Experience",
+          education: "Education",
+        },
       harvard: ``,
     },
   },
