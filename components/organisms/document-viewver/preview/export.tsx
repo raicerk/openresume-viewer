@@ -13,6 +13,7 @@ import {
   FileIcon as FilePdf,
   FileType,
 } from "lucide-react";
+import React from "react";
 
 export function Export() {
   const { t } = useLanguage();

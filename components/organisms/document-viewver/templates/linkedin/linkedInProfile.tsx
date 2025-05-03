@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./linkedInProfile.module.css";
+import { ResumeSchema } from "../../types/resume";
 
-const LinkedInProfile: React.FC = () => {
+type LinkedinProps = {
+  resume: ResumeSchema;
+};
+
+
+const LinkedInProfile = ({resume}: LinkedinProps) => {
   return (
     <div className={styles.container}>
       <aside className={styles.aside}>
@@ -54,7 +60,7 @@ const LinkedInProfile: React.FC = () => {
 
       <main className={styles.main}>
         <header className={styles.mainHeader}>
-          <h1>Juan Valentin Mora Ruiz</h1>
+          <h1>{resume?.data?.personal?.name}</h1>
           <h2>Senior Software Engineer - Technical Lead</h2>
           <p>Gran Santiago, Región Metropolitana de Santiago, Chile</p>
         </header>
