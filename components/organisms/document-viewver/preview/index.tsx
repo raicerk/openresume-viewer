@@ -5,7 +5,7 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { useMemo } from "react";
 import { useDocumentViewerContext } from "../hooks/useDocumentViewerContext";
 import { Export } from "./export";
-import { HTMLPreview } from "./htmlpreview";
+import { HTMLPreview } from "./html-preview";
 
 export function Preview() {
   const { t } = useLanguage();

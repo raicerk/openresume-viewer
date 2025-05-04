@@ -49,6 +49,7 @@
     "prismjs": "latest",
     "react": "^19",
     "react-dom": "^19",
+    "react-error-boundary": "^6.0.0",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "react-simple-code-editor": "latest",

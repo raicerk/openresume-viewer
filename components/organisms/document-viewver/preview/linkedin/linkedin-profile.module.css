@@ -1,18 +1,9 @@
 .container {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  display: flex;
-  flex-wrap: wrap;
+  @apply flex flex-wrap text-slate-800 p-0 m-0 font-serif;
 }
 
 .main {
-  flex: 1;
-  min-width: 50%;
-  padding: 20px;
-  font-size: x-small;
+  @apply flex-1 min-w-[50%] p-5 text-xs;
 }
 
 .aside {

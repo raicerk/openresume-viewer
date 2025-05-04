@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./linkedInProfile.module.css";
+import styles from "./linkedin-profile.module.css";
 import { ResumeSchema } from "../../types/resume";
 import { useLanguage } from "@/hooks/use-language";
 
@@ -59,7 +59,10 @@ const LinkedInProfile = ({ resume }: LinkedinProps) => {
         <header className={styles.mainHeader}>
           <h1>{resume?.data?.personal?.name}</h1>
           <h2>{resume?.data?.summary}</h2>
-          <p>{resume?.data?.personal?.city}, {resume?.data?.personal?.state}, {resume?.data?.personal?.country}</p>
+          <p>
+            {resume?.data?.personal?.city}, {resume?.data?.personal?.state},{" "}
+            {resume?.data?.personal?.country}
+          </p>
         </header>
 
         <section className={styles.section} id="experience">
@@ -73,7 +76,8 @@ const LinkedInProfile = ({ resume }: LinkedinProps) => {
                   {/* {exp.start_year} - {exp.end_year} */}
                 </div>
                 <div className={styles.location}>
-                  {exp.employer_city}, {exp.employer_state}, {exp.employer_country}
+                  {exp.employer_city}, {exp.employer_state},{" "}
+                  {exp.employer_country}
                 </div>
               </div>
               <p>{exp.description?.join(" ")}</p>
@@ -87,7 +91,9 @@ const LinkedInProfile = ({ resume }: LinkedinProps) => {
             <div key={index} className={styles.educationItem}>
               <h3>{edu.institution}</h3>
               <div className={styles.educationMeta}>
-                <div>{edu.degree_title} ( {edu.start_year} - {edu.end_year})</div>
+                <div>
+                  {edu.degree_title} ( {edu.start_year} - {edu.end_year})
+                </div>
               </div>
             </div>
           ))}
