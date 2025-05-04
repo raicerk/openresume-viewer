@@ -53,86 +53,44 @@ const LinkedInProfile = ({ resume }: LinkedinProps) => {
             <li>Fundamentos de la gestión de proyectos</li>
           </ul>
         </div>
-
-        <div className={styles.sidebarSection}>
-          <h3>{t("templates.linkedin.awards")}</h3>
-          <ul className={styles.awardsList}>
-            <li>Trabajador revelación 2016</li>
-          </ul>
-        </div>
       </aside>
 
       <main className={styles.main}>
         <header className={styles.mainHeader}>
           <h1>{resume?.data?.personal?.name}</h1>
-          <h2>Senior Software Engineer - Technical Lead</h2>
-          <p>Gran Santiago, Región Metropolitana de Santiago, Chile</p>
+          <h2>{resume?.data?.summary}</h2>
+          <p>{resume?.data?.personal?.city}, {resume?.data?.personal?.state}, {resume?.data?.personal?.country}</p>
         </header>
 
         <section className={styles.section} id="experience">
           <h2>{t("templates.linkedin.experience")}</h2>
-          <div className={styles.experienceItem}>
-            <h3>Technical Lead</h3>
-            <div className={styles.experienceMeta}>
-              <div className={styles.companyName}>Blue Express</div>
-              <div className={styles.dateRange}>
-                febrero de 2025 - Present (4 meses)
+          {resume?.data?.experience?.map((exp, index) => (
+            <div key={index} className={styles.experienceItem}>
+              <h3>{exp.title}</h3>
+              <div className={styles.experienceMeta}>
+                <div className={styles.companyName}>{exp.employer}</div>
+                <div className={styles.dateRange}>
+                  {/* {exp.start_year} - {exp.end_year} */}
+                </div>
+                <div className={styles.location}>
+                  {exp.employer_city}, {exp.employer_state}, {exp.employer_country}
+                </div>
               </div>
-              <div className={styles.location}>
-                Región Metropolitana de Santiago, Chile
-              </div>
+              <p>{exp.description?.join(" ")}</p>
             </div>
-            <p>
-              Technical lead para Blue Express Copec a cargo del equipo
-              transversal de desarrollos para los equipos de tecnológica,
-              liderando las definiciones y decisiones sobre la tecnología que se
-              debe aplicar, el seguimiento de definiciones de las buena
-              prácticas y lineamientos de seguridad para asegurar la calidad de
-              los productos que se están desarrollando en mi equipo como en el
-              resto de los equipos tecnológicos.
-            </p>
-          </div>
-          {/* Agrega aquí más experiencias laborales siguiendo el mismo formato */}
+          ))}
         </section>
 
         <section className={styles.section} id="education">
           <h2>{t("templates.linkedin.education")}</h2>
-          <div className={styles.educationItem}>
-            <h3>Instituto Profesional AIEP</h3>
-            <div className={styles.educationMeta}>
-              <div className={styles.dateRange}>(2011 - 2014)</div>
-              <div>
-                Ingeniero en computación e informática, Desarrollo de sistemas
+          {resume?.data?.education?.map((edu, index) => (
+            <div key={index} className={styles.educationItem}>
+              <h3>{edu.institution}</h3>
+              <div className={styles.educationMeta}>
+                <div>{edu.degree_title} ( {edu.start_year} - {edu.end_year})</div>
               </div>
             </div>
-          </div>
-
-          <div className={styles.educationItem}>
-            <h3>Universidad Nacional Andrés Bello</h3>
-            <div className={styles.educationMeta}>
-              <div className={styles.dateRange}>(2008 - 2010)</div>
-              <div>Ingeniería en computación e informática, Informática</div>
-            </div>
-          </div>
-
-          <div className={styles.educationItem}>
-            <h3>Universidad Nacional Andrés Bello</h3>
-            <div className={styles.educationMeta}>
-              <div className={styles.dateRange}>(2007 - 2007)</div>
-              <div>
-                Ingeniería Civil en computación e informática, Ingeniería
-                informática
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.educationItem}>
-            <h3>Universidad Autónoma de Chile</h3>
-            <div className={styles.educationMeta}>
-              <div className={styles.dateRange}>(2025 - 2025)</div>
-              <div>Diplomado en arquitectura de software, Computer Science</div>
-            </div>
-          </div>
+          ))}
         </section>
       </main>
     </div>

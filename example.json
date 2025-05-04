@@ -1,0 +1,123 @@
+{
+  "version": "0.0.1",
+  "format": "orf",
+  "meta": {
+    "name": "Juan Mora",
+    "sort": "chronological",
+    "sort_order": "asc",
+    "tags": ["tech", "technical lead", "backend", "frontend"]
+  },
+  "data": {
+    "personal": {
+      "name": "Juan Valentin Mora Ruiz",
+      "phone_number": "964890833",
+      "country_code": "+56",
+      "address_line_1": null,
+      "address_line_2": null,
+      "city": "Santiago",
+      "state": "Región metropolitana",
+      "zip": "0970000",
+      "country": "Chile",
+      "email": "raicerk@outlook.com",
+      "url_linkedin": "linkedin.com/in/juanvalentinmoraruiz",
+      "url_portfolio": null,
+      "url_website": null,
+      "url_other": [
+        {
+          "text": "Facebook",
+          "url": "facebook.com/user"
+        },
+        {
+          "text": "Dribble",
+          "url": "dribble.com/user"
+        }
+      ]
+    },
+    "summary": "Senior Software Engineer - Technical Lead",
+    "education": [
+      {
+        "degree_level": "",
+        "degree_title": "Ingeniero en computacion e informatica, Desarrollo de sistemas",
+        "completed": true,
+        "institution": "Instituto Profesional AIEP",
+        "major": null,
+        "minor": null,
+        "concentration": null,
+        "gpa": "null",
+        "gpa_scale": "null",
+        "institution_city": "Santiago",
+        "institution_state": "Región metropolitana",
+        "institution_zip": null,
+        "institution_country": "Chile",
+        "start_day": 15,
+        "start_month": 3,
+        "start_year": 2011,
+        "end_day": 30,
+        "end_month": 12,
+        "end_year": 2014
+      }
+    ],
+    "experience": [
+      {
+        "title": "Technical Lead",
+        "employer": "Blue Express",
+        "employer_city": "Santiago",
+        "employer_state": "Región Metropolitana de Santiago",
+        "employer_zip": null,
+        "employer_country": "Chile",
+        "employer_phone_number": null,
+        "description": [
+          "Technical lead para Blue Express Copec a cargo del equipo transversal de desarrollos para los equipos de tecnológica, liderando las definiciones y decisiones sobre la tecnología que se debe aplicar, el seguimiento de definiciones de las buena prácticas y lineamientos de seguridad para asegurar la calidad de los productos que se están desarrollando en mi equipo como en el resto de los equipos tecnológicos"
+        ]
+      },
+      {
+        "title": "Technical Lead",
+        "employer": "Imagemaker",
+        "employer_city": "Las Condes",
+        "employer_state": "Región Metropolitana de Santiago",
+        "employer_zip": null,
+        "employer_country": "Chile",
+        "employer_phone_number": null,
+        "description": [
+          "Technical manager para AFP Provida a cargo de todos los equipos de migración de plataforma tecnológica, liderando las definiciones y decisiones sobre la tecnología que se debe aplicar, el seguimiento definiciones las buena prácticas y lineamientos de seguridad para asegurar la calidad den los productos que se están migrando, además de mejorar la plataforma de traspaso de AFP para atraer nuevos clientes a Provida"
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "name": "Open API",
+        "proficiency_level": "Avanzado",
+        "catogory": "Estandares"
+      },
+      {
+        "name": "Agilidad",
+        "proficiency_level": "Avanzado",
+        "category": "Management"
+      },
+      {
+        "name": "Liderazgo de equipos multidisciplinarios",
+        "proficiency_level": "Avanzado",
+        "category": "Management"
+      }
+    ],
+    "publication": [
+      {
+        "title": null,
+        "url": null,
+        "year": 2018,
+        "credits": null,
+        "citation_format": "apa"
+      }
+    ],
+    "projects": [
+      {
+        "title": "Pro-gramadores",
+        "sub_title": "Conunidad de programadores",
+        "url": "https://pro-gramadores.org",
+        "description": [
+          "Comiunidad de programadores, donde se pueden encontrar cursos, tutoriales y un foro para resolver dudas"
+        ]
+      }
+    ]
+  }
+}
